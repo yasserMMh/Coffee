@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Coffee</title>
+</head>
+<body>
+    <div class="front-part">
+        <div class="circle"></div>
+        <header>
+            <div class='logo'><img src="./24384-3-starbucks-logo-file-thumb.png" alt="StarBucks Logo"></div>
+            <ul class='nav'>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Waht's New</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        
+        <div class="content">
+            <div class="txt">
+                <h2>It's not just a coffee<br />It's <span>Starbucks</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus ab facilis alias, quod magnam
+                    consequatur
+                    totam eius quaerat impedit officiis accusantium reprehenderit ex sunt exercitationem libero doloribus autem,
+                    sint tempora.</p>
+                <a href="#">learn more</a>
+            </div>
+            <div class="mainCup">
+                <img class='mainView' src="./77325-frappuccino-drink-chocolate-starbucks-matcha-white.png" alt="" srcset="">
+            </div>
+        
+            <ul class="social">
+                <li><a href="#"><img src="./Facebook.png" alt="fb"></a></li>
+                <li><a href="#"><img src="./Twitter.png" alt="twitter"></a></li>
+                <li><a href="#"><img src="./Instagram.png" alt="inst"></a></li>
+                <li><a href="#"><img src="./Gmail.png" alt="gmail"></a></li>
+            </ul>
+        
+        </div>
+        <ul class="menu">
+        
+            <li><img src="./77325-frappuccino-drink-chocolate-starbucks-matcha-white.png" alt="frappuccino-drink-chocolate"
+                    onclick="imgSlider('77325-frappuccino-drink-chocolate-starbucks-matcha-white.png', '400px')"></li>
+            <li><img src="./62120-coffee-frappuccino-drink-latte-starbucks-unicorn.png" alt="frappuccino-drink-latte"
+                    onclick="imgSlider('62120-coffee-frappuccino-drink-latte-starbucks-unicorn.png', '270px')"></li>
+            <li><img src="./62115-tea-coffee-drink-starbucks-latte-free-download-image.png" alt="tea-coffe"
+                    onclick="imgSlider('62115-tea-coffee-drink-starbucks-latte-free-download-image.png', '350px')"></li>
+        
+        
+        </ul>
+
+    </div>
+
+    <div class="back-part">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </div>
+    
+
+    <script type="text/javascript">
+        function imgSlider(next,sizeImg){
+                document.querySelector('.mainView').src= next;
+                document.querySelector(':root').style.setProperty('--resizeNewimage', sizeImg);
+            }
+    </script>
+</body>
+</html>
