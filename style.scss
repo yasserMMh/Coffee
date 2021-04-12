@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,800;0,900;1,200&display=swap');
+
+@mixin flexDis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+@mixin circle-back($pos1,$pos2) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 2px;
+    z-index: -1;
+    background-color: #017143;
+    clip-path: circle(700px at $pos1 $pos2);
+    
+}
+
+$resizeNewimage: 200px;
+
+:root{
+    --resizeNewimage: 400px;
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(246, 248, 250);
+    overflow: hidden;
+}
+
+
+.front-part{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    right: 5%;
+    top: 5%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: rgb(246, 248, 250);
+    box-shadow: 2px 5px 10px 2px rgba($color: #333, $alpha: 0.5),
+                -1px -1px 10px rgba($color: #333, $alpha: 0.3);
+}
+.back-part{
+
+    .circle1{
+        @include circle-back(right, 800px);
+    }
+    
+    
+    .circle2{
+        @include circle-back(left, -400px);
+    }
+}
+
+header{
+    margin: 2px 50px;
+    @include flexDis();
+}
+
+.logo{
+    position: relative;
+    border-right: #017143 2px solid;
+    
+    margin-top: 10px;
+    left: 5%;
+    
+    img{
+        width: 50%;
+    }
+}
+.nav{
+    @include flexDis();
+
+    li{
+        position: relative;
+        list-style: none;
+        padding: 2px 35px;
+        right: 15%;
+        
+        a{
+            text-decoration: none;
+            color: #333;
+            transition: 0.1s ease-in;
+            &:hover{
+                border-top: #017143 3px solid;
+            }
+            
+        }
+    }  
+}
+
+.content{
+    @include flexDis();
+   
+    .txt{
+        position: relative;
+        width: 600px;
+        bottom: 70px;
+        
+        padding-left: 100px;
+
+        h2{
+            color: #333;
+            font-size: 3.5em;
+            line-height: 1.4em;
+            font-weight: 500;
+            span{
+                color: #017143;
+                font-size: 1.2em;
+                font-weight: 900;
+            }
+        }
+        p{
+            color: #333;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        a{
+            color: #fff;
+            background-color: #017143;
+            text-decoration: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            letter-spacing: 1.5px;
+        }
+
+    }
+
+    .mainCup{
+        z-index: 1;
+        margin-right: 150px;
+        margin-top: 15px;
+        height: 600px;
+        
+        img{
+            width: var(--resizeNewimage);
+        }
+    }
+
+    .social{
+        z-index: 2;
+        position: absolute;
+        list-style: none;
+        right: 20px;
+        display: inline-block;
+        
+        li{
+            transition: 0.1s ease-out;
+            &:hover{
+                transform: scale(1.5);
+            }
+            a{
+                display: inline-block;
+                margin: 7px 0;
+                img{
+                width: 30px;
+                filter: invert(1);
+                
+            }
+            }
+        }
+    }
+}
+.menu{
+    display: flex;
+    position: absolute;
+    margin: 0 500px;
+    bottom: 20px;
+    li{
+        list-style: none;
+        padding-left: 10px;
+        display: inline-block;
+        cursor: pointer;
+        margin-left: 20px;
+        transition: 0.5s;
+        &:hover{
+            transform:translateY(-15px);
+        }
+
+        img{
+        width: 50px;
+    }
+    }
+}
+
+.circle{
+    position: absolute;
+    z-index: 0;
+    
+    width: 100%;
+    height: 100%;
+    background-color: #017143;
+    clip-path: circle(600px at right 800px);
+}
+
